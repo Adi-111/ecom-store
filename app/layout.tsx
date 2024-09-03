@@ -12,7 +12,7 @@ import './globals.css'
 const font = Urbanist({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Ecom - Store',
+  title: 'Attire Arena',
   description: 'Github - https://github.com/Adi-111',
 }
 
@@ -23,15 +23,15 @@ export default function RootLayout({
 }) {
   return (
     <ThemeContextProvider>
-    <html lang="en">
-      <body className={font.className}>
-        <ToastProvider />
-        <ModalProvider />
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+      <html lang="en">
+        <body className={font.className}>
+          <ToastProvider />
+          <ModalProvider />
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </html>
     </ThemeContextProvider>
   )
 }

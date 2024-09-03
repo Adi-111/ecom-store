@@ -1,12 +1,14 @@
 "use client";
 
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, User2Icon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import Button from "@/components/ui/button";
 import useCart from "@/hooks/use-cart";
-import ThemeSwitch from "./theme-switch";
+
+
+
 
 const NavbarActions = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -22,9 +24,14 @@ const NavbarActions = () => {
     return null;
   }
 
-  return ( 
+  return (
     <div className="ml-auto flex items-center gap-x-4">
-      {/* <ThemeSwitch /> */}
+      <Button onClick={() => router.push('/user')} className="flex items-center rounded-full bg-black px-4 py-2">
+        <User2Icon
+          size={20}
+          color="white"
+        />
+      </Button>
 
       <Button onClick={() => router.push('/cart')} className="flex items-center rounded-full bg-black px-4 py-2">
         <ShoppingBag
@@ -38,5 +45,5 @@ const NavbarActions = () => {
     </div>
   );
 }
- 
+
 export default NavbarActions;
