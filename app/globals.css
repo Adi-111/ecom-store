@@ -74,3 +74,9 @@ body,
     @apply bg-[#f2f1ef] text-foreground;
   }
 }
+.timeless {
+  font-family: 'CustomFont'; /* Give your font a name */
+  src: url('/public/Baskervville/Baskervville-Regular.ttf') format('truetype'); /* Path to your font file */
+  font-weight: normal; /* You can adjust font-weight and style */
+  font-style: normal;
+}

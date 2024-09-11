@@ -7,6 +7,7 @@ import Container from "@/components/ui/container";
 import NavbarActions from "@/components/navbar-actions";
 import getCategories from "@/actions/get-category";
 import logoImage from "@/public/icon.png"
+import MobileNav from "./mobile-nav";
 
 
 const Navbar = async () => {
@@ -20,8 +21,12 @@ const Navbar = async () => {
             <Image src={logoImage} alt="alt" width={24} height={24} />
             <p className="font-bold text-xlv ">Attire Arena</p>
           </Link>
-          <MainNav data={categories} />
+          <div className="hidden xl:flex items-center gap-8"><MainNav data={categories} /></div>
           <NavbarActions />
+
+          <div className="xl:hidden ml-2"><MobileNav data={categories} /></div>
+
+
         </div>
       </Container>
     </div>
