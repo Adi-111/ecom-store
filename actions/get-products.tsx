@@ -23,8 +23,9 @@ const getProducts = async (query: Query): Promise<Product[]> => {
   });
 
   try {
-    const res = await axios.get<Product[]>(url); // Use the constructed URL here
-    return res.data;
+    const res = await axios.get(url);
+    const data = res.data;
+    return Array.isArray(data) ? data : (data?.products ?? data?.data ?? []);
   } catch (error) {
     console.error("Failed to fetch products:", error);
     throw new Error("Failed to fetch products");

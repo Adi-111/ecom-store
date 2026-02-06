@@ -9,8 +9,9 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({
   title,
-  items
+  items: itemsProp
 }) => {
+  const items = Array.isArray(itemsProp) ? itemsProp : [];
   return (
     <div className="space-y-4">
       <h3 className="font-bold text-3xl ">{title}</h3>
